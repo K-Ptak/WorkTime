@@ -12,20 +12,25 @@ done < "$config"
 wtime=${settings[0]}
 btime=${settings[1]}
 lbtime=${settings[2]}
-rtime=${settings[3]}
-ticon=${settings[4]}
+pseq=${settings[3]}
+rtime=${settings[4]}
+ticon=${settings[5]}
 
+lastseq=$((pseq-1))
+echo $$
+if [[ "$ticon" == "true" ]]; then
+    yad --notification --image="gtk-execute" --command="" --menu="Stop WorkTime ! killall yad|kill $$" --text="WorkTime" --kill-parent & disown
+fi
 
-echo "$rtime"
-yad --notification --image="gtk-execute" --command="" --menu="Stop WorkTime ! killall yad && " --text="WorkTime"
+for ((n=0;n<"$pseq";n++))
+do
+    zenity --notification --text "Work time!" && sleep $wtime
+    if [[ "$rtime" == "true" ]]; then
+        zenity --notification --text "Review time!" && sleep 1m
+    fi
 
-# for ((n=0;n<3;n++))
-# do
-#
-#     sleep $wtime && zenity --notification --text "Work time!" && disown
-#     if [[ "$rtime" == "true" ]]; then
-#
-#     fi
-#     sleep $wtime && zenity --notification --text "Work time!" && disown
-#     sleep $wtime && zenity --notification --text "Work time!" && disown
-# done
+    if [[ "$n" != "$lastseq" ]]; then
+       zenity --notification --text "Break time!" && sleep $btime
+    fi
+done
+zenity --notification --text "Long break time!" && sleep $lbtime
