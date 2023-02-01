@@ -19,7 +19,7 @@ ticon=${settings[5]}
 lastseq=$((pseq-1))
 echo $$
 if [[ "$ticon" == "true" ]]; then
-    yad --notification --image="gtk-execute" --command="" --menu="Stop WorkTime ! killall yad|kill $$" --text="WorkTime" --kill-parent & disown
+    yad --notification --image="clock" --command="" --menu="Stop WorkTime ! kill -SIGTERM $$ yad" --text="WorkTime" & disown
 fi
 
 for ((n=0;n<"$pseq";n++))
