@@ -46,6 +46,7 @@ For example:
 wt 5 & disown
 ```
 If you want to end the program early, you can stop it by right-clicking it's icon in icon tray and choosing 'Stop WorkTime'
+
 ![worktime_icontray](https://user-images.githubusercontent.com/65954097/216964192-34ee23af-b4fe-4698-8d29-43b2d4e06da7.png)
 
 
