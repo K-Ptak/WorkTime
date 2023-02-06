@@ -2,7 +2,7 @@
 Linux console application for pomodoro technique 
 
 
-#Prerequires for WorkTime
+# Prerequires for WorkTime
 zenity
 pulseaudio
 
