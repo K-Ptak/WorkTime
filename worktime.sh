@@ -15,7 +15,7 @@ sound () {
 }
 
 
-config=".config"
+config="/opt/worktime/.config"
 settings=()
 while read -r line
 do
