@@ -53,3 +53,6 @@ If you want to end the program early, you can stop it by right-clicking it's ico
 
 ### Configuration
 You can modify the length of certain pomodoro phases and other parameters by modifying the .config stored in /opt/worktime/
+
+### Bug reporting
+If you catch any bug or error feel free to notify me about it through an issue 🥰
