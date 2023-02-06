@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DIR=/opt/worktime
+if [ ! -d "$DIR" ];
+then
+    mkdir "$DIR"
+fi
+
+cp LICENSE "$DIR"
+cp README.md "$DIR"
+cp worktime.sh "$DIR"
+cp .config "$DIR"
+
+
+
+read -p "Would you like to add 'worktime' and 'wt' alias for worktime.sh? Yes/No (default: No) " alias
+
